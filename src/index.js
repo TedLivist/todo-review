@@ -21,7 +21,9 @@ const renderTasks = () => {
   }
 
   const storedList = JSON.parse(localStorage.getItem('todo-list'));
-  if (storedList != null) {
+  if (storedList == null) {
+    return false;
+  } else {
     for (let i = 0; i <= storedList.length - 1; i++) {
       const taskContainer = document.createElement('div');
       taskContainer.id = storedList[i].index;
@@ -53,10 +55,6 @@ const renderTasks = () => {
 
       taskDescription.addEventListener('focus', () => {
         taskDescription.classList.remove('strike');
-        trash.addEventListener('mousedown', (e) => {
-          e.preventDefault();
-          deleteTask(parseInt(trash.id));
-        });
       });
 
       taskDescription.addEventListener('blur', (e) => {
@@ -66,6 +64,11 @@ const renderTasks = () => {
       taskCheckbox.addEventListener('change', (e) => {
         check(e.target, storedList[i], taskDescription);
         saveStorage(storedList);
+      });
+
+      trash.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        deleteTask(parseInt(trash.id));
       });
     }
   }
