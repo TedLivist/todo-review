@@ -86,7 +86,7 @@ window.addEventListener('load', () => {
   const todoList = JSON.parse(localStorage.getItem('todo-list'));
 
   if (todoList == null) {
-    renderTasks();
+    return false
   } else {
     renderTasks();
   }
