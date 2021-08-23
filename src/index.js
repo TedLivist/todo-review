@@ -1,7 +1,7 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-plusplus */
-/* eslint-disable import/no-cycle */
-/* eslint-disable radix */
+/* eslint-disable linebreak-style, consistent-return */
+/* eslint-disable no-plusplus, no-else-return */
+/* eslint-disable import/no-cycle, radix */
+/* eslint-disable no-unused-expressions */
 import './assets/stylesheet/style.css';
 import check from './modules/checkComplete.js';
 import saveStorage from './modules/saveStorage.js';
@@ -86,7 +86,7 @@ window.addEventListener('load', () => {
   const todoList = JSON.parse(localStorage.getItem('todo-list'));
 
   if (todoList == null) {
-    return false
+    return false;
   } else {
     renderTasks();
   }
