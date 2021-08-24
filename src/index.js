@@ -62,8 +62,9 @@ const renderTasks = () => {
       });
 
       taskCheckbox.addEventListener('change', (e) => {
-        check(e.target, storedList[i], taskDescription);
+        check(e.target, storedList[i]);
         saveStorage(storedList);
+        taskDescription.classList.toggle('strike');
       });
 
       trash.addEventListener('mousedown', (e) => {
