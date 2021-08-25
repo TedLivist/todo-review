@@ -1,10 +1,10 @@
-export class MockStorage {
+export default class MockStorage {
   constructor() {
-    this.store = {}
+    this.store = {};
   }
 
   getItem(key) {
-    return this.store[key]
+    return this.store[key];
   }
 
   setItem(key, value) {

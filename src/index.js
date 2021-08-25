@@ -4,7 +4,7 @@
 /* eslint-disable no-unused-expressions */
 import './assets/stylesheet/style.css';
 import check from './modules/checkComplete.js';
-import saveStorage from './modules/saveStorage.js';
+import { saveStorage, storedStuff } from './modules/saveStorage.js';
 import addTask from './modules/addTask.js';
 import editTask from './modules/editTask.js';
 import deleteTask from './modules/deleteTask.js';
@@ -69,18 +69,19 @@ const renderTasks = () => {
 
       trash.addEventListener('mousedown', (e) => {
         e.preventDefault();
-        deleteTask(parseInt(trash.id));
-        renderTasks()
+        const deleteItem = deleteTask(parseInt(trash.id), storedStuff('todo-list'));
+        saveStorage(deleteItem);
+        renderTasks();
       });
     }
   }
 };
 
 addButton.addEventListener('click', () => {
-  //console.log(addTask(taskInput));
-  let items = JSON.parse(localStorage.getItem('todo-list'))
-  saveStorage(addTask(taskInput, items))
-  renderTasks()
+  //  console.log(addTask(taskInput));
+  const items = JSON.parse(localStorage.getItem('todo-list'));
+  saveStorage(addTask(taskInput, items));
+  renderTasks();
 });
 
 clearCompletedLink.addEventListener('click', () => {

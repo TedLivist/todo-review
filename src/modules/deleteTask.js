@@ -3,14 +3,14 @@
 /* eslint-disable no-plusplus */
 import saveStorage from './saveStorage.js';
 
-const deleteTask = (itemIndex) => {
-  const storedStuff = JSON.parse(localStorage.getItem('todo-list'));
+const deleteTask = (itemIndex, stuff) => {
+  // const storedStuff = JSON.parse(localStorage.getItem('todo-list'));
 
-  const newList = storedStuff.filter((i) => storedStuff.indexOf(i) !== itemIndex);
+  const newList = stuff.filter((i) => stuff.indexOf(i) !== itemIndex);
   for (let i = 0; i <= newList.length - 1; i++) {
     newList[i].index = newList.indexOf(newList[i]) + 1;
   }
-  saveStorage(newList);
+  return newList;
 };
 
 export default deleteTask;
