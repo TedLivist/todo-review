@@ -25,12 +25,22 @@
 - Run `npm i` to install the dependencies
 - Run `npm start` to start the application
 
+#### To run Test
+
+- Run `npm run test`
+
 ## Author
 
 👤 **Teddy-Livingstone**
 
 - [GitHub](https://github.com/TedLivist)
 - [LinkedIn](https://linkedin.com/in/tememandu)
+
+👤 **Rida Arif**
+
+- GitHub: [@githubhandle](https://github.com/ridaarif98)
+- Twitter: [@twitterhandle](https://twitter.com/Rida29984906)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/rida-arif-90945520b/)
 
 ## 🤝 Contributing
 

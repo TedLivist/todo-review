@@ -1,31 +1,22 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-cycle */
-import saveStorage from './saveStorage.js';
-
-const addTask = (todoInput) => {
-  let list = JSON.parse(localStorage.getItem('todo-list'));
-
+const addTask = (todoInput, storageList) => {
   if (todoInput.value === '') {
     todoInput.focus();
-  } else if (list != null) {
-    list.push({
+  } else if (storageList != null) {
+    storageList.push({
       description: todoInput.value,
       completed: false,
-      index: list.length + 1,
+      index: storageList.length + 1,
     });
-    saveStorage(list);
   } else {
-    list = [];
-    list.push({
+    storageList = [];
+    storageList.push({
       description: todoInput.value,
       completed: false,
       index: 1,
     });
-    saveStorage(list);
   }
 
-  todoInput.value = '';
-  todoInput.focus();
+  return storageList;
 };
 
 export default addTask;

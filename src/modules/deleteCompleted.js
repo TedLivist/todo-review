@@ -1,20 +1,12 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-cycle */
-/* eslint-disable no-plusplus */
-import renderTasks from '../index.js';
-import saveStorage from './saveStorage.js';
-
-const deleteCompleted = () => {
-  const storedItems = JSON.parse(localStorage.getItem('todo-list'));
-
+const deleteCompleted = (storedItems) => {
   const uncompletedItems = storedItems.filter((item) => item.completed === false);
 
-  let index = 1;
-  for (let i = 0; i <= uncompletedItems.length - 1; i++) {
-    uncompletedItems[i].index = index++;
+  for (let i = 0; i <= uncompletedItems.length - 1; i += 1) {
+    const indx = uncompletedItems.indexOf(uncompletedItems[i]);
+    uncompletedItems[i].index = indx + 1;
   }
-  saveStorage(uncompletedItems);
-  renderTasks();
+
+  return uncompletedItems;
 };
 
 export default deleteCompleted;

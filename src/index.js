@@ -1,10 +1,10 @@
-/* eslint-disable linebreak-style, consistent-return */
-/* eslint-disable no-plusplus, no-else-return */
+/* eslint-disable consistent-return */
+/* eslint-disable no-else-return */
 /* eslint-disable import/no-cycle, radix */
 /* eslint-disable no-unused-expressions */
 import './assets/stylesheet/style.css';
 import check from './modules/checkComplete.js';
-import saveStorage from './modules/saveStorage.js';
+import { saveStorage, storedStuff } from './modules/saveStorage.js';
 import addTask from './modules/addTask.js';
 import editTask from './modules/editTask.js';
 import deleteTask from './modules/deleteTask.js';
@@ -24,7 +24,7 @@ const renderTasks = () => {
   if (storedList == null) {
     return false;
   } else {
-    for (let i = 0; i <= storedList.length - 1; i++) {
+    for (let i = 0; i <= storedList.length - 1; i += 1) {
       const taskContainer = document.createElement('div');
       taskContainer.id = storedList[i].index;
       taskContainer.classList.add('list');
@@ -69,20 +69,26 @@ const renderTasks = () => {
 
       trash.addEventListener('mousedown', (e) => {
         e.preventDefault();
-        deleteTask(parseInt(trash.id));
-        renderTasks()
+        const deleteItem = deleteTask(parseInt(trash.id, 10), storedStuff('todo-list'));
+        saveStorage(deleteItem);
+        renderTasks();
       });
     }
   }
 };
 
 addButton.addEventListener('click', () => {
-  addTask(taskInput);
-  renderTasks()
+  const items = JSON.parse(localStorage.getItem('todo-list'));
+  saveStorage(addTask(taskInput, items));
+  renderTasks();
+  taskInput.value = '';
 });
 
 clearCompletedLink.addEventListener('click', () => {
-  deleteCompleted();
+  const items = JSON.parse(localStorage.getItem('todo-list'));
+  const unCompletedItems = deleteCompleted(items);
+  saveStorage(unCompletedItems);
+  renderTasks();
 });
 
 window.addEventListener('load', () => {
