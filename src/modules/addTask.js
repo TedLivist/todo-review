@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/no-cycle */
-import saveStorage from './saveStorage.js';
 
 const addTask = (todoInput, storageList) => {
   if (todoInput.value === '') {

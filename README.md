@@ -25,6 +25,10 @@
 - Run `npm i` to install the dependencies
 - Run `npm start` to start the application
 
+#### To run Test
+
+- Run `npm run test`
+
 ## Author
 
 👤 **Teddy-Livingstone**
