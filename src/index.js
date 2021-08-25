@@ -70,6 +70,7 @@ const renderTasks = () => {
       trash.addEventListener('mousedown', (e) => {
         e.preventDefault();
         deleteTask(parseInt(trash.id));
+        renderTasks()
       });
     }
   }
@@ -77,6 +78,7 @@ const renderTasks = () => {
 
 addButton.addEventListener('click', () => {
   addTask(taskInput);
+  renderTasks()
 });
 
 clearCompletedLink.addEventListener('click', () => {

@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/no-cycle */
 import saveStorage from './saveStorage.js';
-import renderTasks from '../index.js';
 
 const addTask = (todoInput) => {
   let list = JSON.parse(localStorage.getItem('todo-list'));
@@ -27,8 +26,6 @@ const addTask = (todoInput) => {
 
   todoInput.value = '';
   todoInput.focus();
-
-  renderTasks();
 };
 
 export default addTask;
