@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+
 import addTask from '../modules/addTask.js';
 import deleteTask from '../modules/deleteTask.js';
 import MockStorage from '../../__mock__/storage.js';
