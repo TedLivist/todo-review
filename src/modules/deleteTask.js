@@ -11,7 +11,6 @@ const deleteTask = (itemIndex) => {
     newList[i].index = newList.indexOf(newList[i]) + 1;
   }
   saveStorage(newList);
-  window.location.reload();
 };
 
 export default deleteTask;
