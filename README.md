@@ -32,6 +32,12 @@
 - [GitHub](https://github.com/TedLivist)
 - [LinkedIn](https://linkedin.com/in/tememandu)
 
+👤 **Rida Arif**
+
+- GitHub: [@githubhandle](https://github.com/ridaarif98)
+- Twitter: [@twitterhandle](https://twitter.com/Rida29984906)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/rida-arif-90945520b/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
