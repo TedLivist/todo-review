@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 export const saveStorage = (items) => {
   localStorage.setItem('todo-list', JSON.stringify(items));
 };

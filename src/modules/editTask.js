@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable import/no-cycle */
 import renderTasks from '../index.js';
 import saveStorage from './saveStorage.js';

@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 const check = (checkbox, item) => {
   if (checkbox.checked) {
     item.completed = true;

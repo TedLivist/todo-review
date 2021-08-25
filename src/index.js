@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style, consistent-return */
+/* eslint-disable consistent-return */
 /* eslint-disable no-plusplus, no-else-return */
 /* eslint-disable import/no-cycle, radix */
 /* eslint-disable no-unused-expressions */
@@ -69,7 +69,7 @@ const renderTasks = () => {
 
       trash.addEventListener('mousedown', (e) => {
         e.preventDefault();
-        const deleteItem = deleteTask(parseInt(trash.id), storedStuff('todo-list'));
+        const deleteItem = deleteTask(parseInt(trash.id, 10), storedStuff('todo-list'));
         saveStorage(deleteItem);
         renderTasks();
       });
@@ -78,10 +78,10 @@ const renderTasks = () => {
 };
 
 addButton.addEventListener('click', () => {
-  //  console.log(addTask(taskInput));
   const items = JSON.parse(localStorage.getItem('todo-list'));
   saveStorage(addTask(taskInput, items));
   renderTasks();
+  taskInput.value = '';
 });
 
 clearCompletedLink.addEventListener('click', () => {

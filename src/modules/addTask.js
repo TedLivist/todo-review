@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable import/no-cycle */
 
 const addTask = (todoInput, storageList) => {

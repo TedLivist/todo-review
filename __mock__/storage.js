@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 export default class MockStorage {
   constructor() {
     this.store = {};
