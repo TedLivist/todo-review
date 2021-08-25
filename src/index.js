@@ -1,5 +1,5 @@
 /* eslint-disable consistent-return */
-/* eslint-disable no-plusplus, no-else-return */
+/* eslint-disable no-else-return */
 /* eslint-disable import/no-cycle, radix */
 /* eslint-disable no-unused-expressions */
 import './assets/stylesheet/style.css';
