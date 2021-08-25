@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-
 const addTask = (todoInput, storageList) => {
   if (todoInput.value === '') {
     todoInput.focus();

@@ -85,7 +85,10 @@ addButton.addEventListener('click', () => {
 });
 
 clearCompletedLink.addEventListener('click', () => {
-  deleteCompleted();
+  const items = JSON.parse(localStorage.getItem('todo-list'));
+  const unCompletedItems = deleteCompleted(items);
+  saveStorage(unCompletedItems);
+  renderTasks();
 });
 
 window.addEventListener('load', () => {
