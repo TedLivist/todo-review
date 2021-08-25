@@ -77,7 +77,9 @@ const renderTasks = () => {
 };
 
 addButton.addEventListener('click', () => {
-  addTask(taskInput);
+  //console.log(addTask(taskInput));
+  let items = JSON.parse(localStorage.getItem('todo-list'))
+  saveStorage(addTask(taskInput, items))
   renderTasks()
 });
 
