@@ -24,7 +24,7 @@ const renderTasks = () => {
   if (storedList == null) {
     return false;
   } else {
-    for (let i = 0; i <= storedList.length - 1; i++) {
+    for (let i = 0; i <= storedList.length - 1; i += 1) {
       const taskContainer = document.createElement('div');
       taskContainer.id = storedList[i].index;
       taskContainer.classList.add('list');

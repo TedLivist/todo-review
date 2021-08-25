@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import renderTasks from '../index.js';
-import saveStorage from './saveStorage.js';
+import { saveStorage } from './saveStorage.js';
 
 const editTask = (description, items, item) => {
   const itemIndex = item.index;
