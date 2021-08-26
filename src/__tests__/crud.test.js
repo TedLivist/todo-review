@@ -1,5 +1,6 @@
-import MockStorage from "../../__mock__/storage";
-import check from "../modules/checkComplete";
+import MockStorage from '../../__mock__/storage';
+import check from '../modules/checkComplete';
+import deleteCompleted from '../modules/deleteCompleted';
 
 describe('Check Function', () => {
   test('updates the completed status to true when checked', () => {
@@ -18,8 +19,7 @@ describe('Check Function', () => {
 });
 
 
-describe('Local Storage test on checkStatus function', () => {
-
+describe('Local Storage test on check function', () => {
   test('Update the local storage status from false to true', () => {
     const mockStorage = new MockStorage();
     const box = { checked: true };
@@ -46,3 +46,11 @@ describe('Local Storage test on checkStatus function', () => {
     expect(arr[1].completed).toBe(false);
     });
 });
+
+describe('DeleteCompleted Function', () => {
+  test('deletes completed items', () => {
+    const items = [{ completed: true }, { completed: false }, { completed: true }];
+    const uncompletedItems = deleteCompleted(items);
+    expect(uncompletedItems.length).toBe(1);
+  })
+})
