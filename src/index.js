@@ -58,7 +58,9 @@ const renderTasks = () => {
       });
 
       taskDescription.addEventListener('blur', (e) => {
-        editTask(e.target, storedList, storedList[i]);
+        const updatedItems = editTask(e.target, storedList, storedList[i]);
+        saveStorage(updatedItems);
+        renderTasks();
       });
 
       taskCheckbox.addEventListener('change', (e) => {
