@@ -52,5 +52,23 @@ describe('DeleteCompleted Function', () => {
     const items = [{ completed: true }, { completed: false }, { completed: true }];
     const uncompletedItems = deleteCompleted(items);
     expect(uncompletedItems.length).toBe(1);
-  })
-})
+  });
+});
+
+describe('DeleteCompleted Function with LocalStorage', () => {
+  test('DeleteCompleted Function delete completed items from Localstorage', () => {
+    const mockStorage = new MockStorage();
+    const todos = [];
+    const newTaskOne = { description: 'task 1', completed: true, index: 1 };
+    todos.push(newTaskOne);
+    const newTaskTwo =  { description: 'task 2', completed: false, index: 2 };
+    todos.push(newTaskTwo)
+    mockStorage.setItem('to-do-list', todos);
+    const arr = mockStorage.getItem('to-do-list');
+    const uncompleted = deleteCompleted(arr);
+    mockStorage.setItem('to-do-list', uncompleted);
+    const getUncompleted = mockStorage.getItem('to-do-list');
+    expect(getUncompleted.length).toBe(1);
+    
+  });
+});
