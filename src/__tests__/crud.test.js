@@ -1,6 +1,7 @@
 import MockStorage from '../../__mock__/storage';
 import check from '../modules/checkComplete';
 import deleteCompleted from '../modules/deleteCompleted';
+import editTask from '../modules/editTask.js';
 
 describe('Check Function', () => {
   test('updates the completed status to true when checked', () => {
@@ -70,5 +71,14 @@ describe('DeleteCompleted Function with LocalStorage', () => {
     const getUncompleted = mockStorage.getItem('to-do-list');
     expect(getUncompleted.length).toBe(1);
     
+  });
+});
+
+describe('EditTask Function', () => {
+  test('EditTask function edit the description of input', () => {
+    const todos =[{index:1, description: 'TestContext'},{index:2, description:'TestOne'}];
+    const updateText = {textContent: 'UpdateTest'};
+    const updateTask = editTask(updateText,todos,todos[0]);
+    expect(updateTask[0].description).toBe('UpdateTest');
   });
 });
